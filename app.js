@@ -6,15 +6,24 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
-const index = require('./routes/index')
-const users = require('./routes/users')
+import mongoose from 'mongoose'
+
+import dbConfig from './config/dbConfig' // 导入数据库配置
+
+// interface
+import router from './server/index' // 接口
 
 // error handler
 onerror(app)
 
+// 链接数据库
+mongoose.connect(dbConfig.dbs, {
+  useNewUrlParser: true
+})
+
 // middlewares
 app.use(bodyparser({
-  enableTypes:['json', 'form', 'text']
+  enableTypes: ['json', 'form', 'text']
 }))
 app.use(json())
 app.use(logger())
@@ -33,9 +42,7 @@ app.use(async (ctx, next) => {
 })
 
 // routes
-app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
-
+app.use(router.routes()).use(router.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
