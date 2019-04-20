@@ -36,6 +36,7 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 
+
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
