@@ -1,6 +1,6 @@
 import Router from 'koa-router'
 import { signUp, verify } from '../controller/user/signup'
-import { signin } from '../controller/user/signin'
+import { signin } from '../controller/user/singin'
 import { getUser } from '../controller/user/getUser'
 import { exit } from '../controller/user/exit'
 

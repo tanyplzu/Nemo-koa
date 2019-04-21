@@ -1,7 +1,7 @@
-import Router from './node_modules/koa-router'
-import Cart from '../dbs/models/cart'
-import axios from '../utils/axios'
-import md5 from './node_modules/crypto-js/md5'
+import Router from 'koa-router'
+import Cart from '../models/cart'
+import axios from '../../utils/axios'
+import md5 from 'crypto-js/md5'
 
 let router = new Router({prefix: '/cart'})
 
