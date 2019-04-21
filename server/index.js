@@ -1,15 +1,14 @@
 import Router from 'koa-router'
-import passport from './interface/utils/passport'
-import users from './interface/users'
-import geo from './interface/geo'
-import search from './interface/search'
-import categroy from './interface/categroy'
-import cart from './interface/cart'
-import order from './interface/order'
-// routes
+import passport from './utils/passport'
+import user from './routes/user'
+import geo from './routes/geo'
+import search from './routes/search'
+import categroy from './routes/categroy'
+import cart from './routes/cart'
+import order from './routes/order'
 
 let router = new Router()
-router.use('/users', users.routes(), users.allowedMethods())
+router.use('/users', user.routes(), user.allowedMethods())
 // Router.use(geo.routes()).use(geo.allowedMethods())
 // Router.use(search.routes()).use(search.allowedMethods())
 // Router.use(categroy.routes()).use(categroy.allowedMethods())

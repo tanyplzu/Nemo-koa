@@ -2,13 +2,13 @@ export default {
     // smtp配置
     smtp: {
       get host() {
-        return 'smtp.qq.com' // 使用的是腾讯的qq邮箱
+        return 'smtp.qq.com' // 腾讯的qq邮箱
       },
       get user() {
         return '759227027@qq.com' // 账户
       },
       get pass() {
-        return 'tujjftbfwbtwbeeg' // 授权码
+        return 'yujjftbfwbtwbeeg' // 授权码
       },
       get code() {
         return () => {
@@ -23,4 +23,3 @@ export default {
       }
     },
   }
-  

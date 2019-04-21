@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import axios from './utils/axios'
+import axios from '../utils/axios'
 import Province from '../dbs/models/province' // 引入模型
 import Menu from '../dbs/models/menu'
 import Redis from 'koa-redis'
