@@ -4,7 +4,7 @@
 
 tree 目录生成命令
 ```shell
-tree -L 3 -I "node_modules"
+tree> doc/tree.md -L 3 -I "node_modules"
 brew install tree  ||  apt-get install tree
 ```
 

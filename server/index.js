@@ -1,5 +1,4 @@
 import Router from 'koa-router'
-import passport from './utils/passport'
 import user from './routes/user'
 import geo from './routes/geo'
 import search from './routes/search'
