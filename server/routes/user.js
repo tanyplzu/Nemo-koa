@@ -1,10 +1,13 @@
 import Router from 'koa-router'
-import { signUp, verify } from '../controller/user/signup'
+import { signUp, verify,test} from '../controller/user/signup'
 import { signin } from '../controller/user/singin'
 import { getUser } from '../controller/user/getUser'
 import { exit } from '../controller/user/exit'
 
 let router = new Router()
+router.get('/test', async (ctx) => {
+  ctx.body = await test(ctx);
+})
 // 注册接口
 router.post('/signup', async (ctx) => {
   ctx.body = await signUp(ctx);

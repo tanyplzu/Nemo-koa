@@ -1,18 +1,7 @@
-{
-  "name": "Nemo-koa",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "node bin/www --exec babel-node",
-    "dev": "./node_modules/.bin/nodemon bin/www --exec babel-node",
-    "prd": "pm2 start bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
+"dependencies": {
     "axios": "^0.18.0",
-    "crypto-js": "^3.1.9-1",
+    "crypto-js": "^3.1.9-1", // 加密
     "debug": "^2.6.3",
-    "glob": "^7.1.3",
     "koa": "^2.2.0",
     "koa-bodyparser": "^3.2.0",
     "koa-convert": "^1.2.0",
@@ -24,13 +13,13 @@
     "koa-router": "^7.1.1",
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
-    "log4js": "^4.1.0",
+    "log4js": "^4.1.0", // 日志
     "mongoose": "^5.5.2",
     "nodemailer": "^6.1.0",
     "passport-local": "^1.0.0",
     "pm2": "^3.5.0",
     "pug": "^2.0.0-rc.1",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1" // 一个函数式编程的库
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -38,4 +27,3 @@
     "babel-preset-es2015": "^6.24.1",
     "nodemon": "^1.8.1"
   }
-}

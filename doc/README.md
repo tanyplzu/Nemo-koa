@@ -38,3 +38,7 @@ log4js接入及使用方法
 
 ### 文件上传
 
+### Ramda
+Ramda 一个函数式编程的库
+可以学习阮一峰老师的这篇文章：
+http://www.ruanyifeng.com/blog/2017/03/ramda.html

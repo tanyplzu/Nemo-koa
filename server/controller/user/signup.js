@@ -2,7 +2,7 @@ import Redis from 'koa-redis'
 import nodeMailer from 'nodemailer'
 import User from '../../models/users'
 import Email from '../../../config/emailConfig'
-import axios from '../../../utils/axios'
+import axios from '../../utils/axios'
 import { resdata, errdata } from '../../utils/serve'
 
 // 获取redis客户端
@@ -40,7 +40,6 @@ exports.signup = async (ctx, next) => {
       username
     })
     if (user.length) {
-
       return resdata('-1', '已被注册', '');
     }
     // 写入数据库
