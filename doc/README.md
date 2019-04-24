@@ -4,7 +4,7 @@
 
 tree 目录生成命令
 ```shell
-tree> doc/tree.md -L 3 -I "node_modules"
+tree> doc/tree.md -L 4 -I "node_modules"
 brew install tree  ||  apt-get install tree
 ```
 
@@ -28,7 +28,9 @@ mongose：https://mongoose.shujuwajue.com/
 
 ### Redis：
 
-安装：mac下使用命令行`sudo brew install redis` ,windows 使用 `https://github.com/MicrosoftArchive/redis/releases`
+安装：mac下使用命令行`sudo brew install redis` ,
+
+windows 使用 `https://github.com/MicrosoftArchive/redis/releases`
 
 启动：redis-server(windows 在gitbash中运行)
 
@@ -42,3 +44,7 @@ log4js接入及使用方法
 Ramda 一个函数式编程的库
 可以学习阮一峰老师的这篇文章：
 http://www.ruanyifeng.com/blog/2017/03/ramda.html
+
+### token
+
+###

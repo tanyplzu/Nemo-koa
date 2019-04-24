@@ -1,3 +1,4 @@
+```json
 "dependencies": {
     "axios": "^0.18.0",
     "crypto-js": "^3.1.9-1", // 加密
@@ -13,6 +14,7 @@
     "koa-router": "^7.1.1",
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
+    "koa2-cors": "^2.0.6", // 跨域
     "log4js": "^4.1.0", // 日志
     "mongoose": "^5.5.2",
     "nodemailer": "^6.1.0",
@@ -27,3 +29,6 @@
     "babel-preset-es2015": "^6.24.1",
     "nodemon": "^1.8.1"
   }
+
+
+```
