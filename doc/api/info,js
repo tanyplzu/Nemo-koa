@@ -1,0 +1,21 @@
+// https://zerg.yijiahotel.shop/api/v1/user/wx_info
+{
+	"code": 201,
+	"msg": "ok",
+	"errorCode": 0,
+	"shouldToClient": true
+}
+
+// https://zerg.yijiahotel.shop/api/v1/address
+{
+	"name": "谭引平",
+	"mobile": "15647251102",
+	"province": "天津市",
+	"city": "天津市",
+	"country": "和平区",
+	"detail": "诚基中心"
+}
+// https://zerg.yijiahotel.shop/api/v1/token/user
+{
+	"token": "9d841dda0eb0d67fe9817fbe3e86b32a"
+}

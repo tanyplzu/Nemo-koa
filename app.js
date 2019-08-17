@@ -23,13 +23,12 @@ mongoose.connect(dbConfig.dbs, {
 })
 
 // middlewares
-app.use(bodyparser({
-  enableTypes: ['json', 'form', 'text']
-}))
+// 使用ctx.body解析中间件
+app.use(bodyparser())
 app.use(json())
 app.use(logger())
-app.use(require('koa-static')(__dirname + '/public'))
 
+app.use(require('koa-static')(__dirname + '/public'))
 app.use(views(__dirname + '/views', {
   extension: 'pug'
 }))

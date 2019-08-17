@@ -2,16 +2,32 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 const UserSchema = new Schema({
-  username: {
+  id: {
     type: String,
     unique: true, // 唯一
     require: true // 必须
   },
-  password: {
+  openid: {
     type: String,
     require: true
   },
-  email: {
+  nickname: {
+    type: String,
+    require: true
+  },
+  extend: {
+    type: String,
+    require: true
+  },
+  delete_time: {
+    type: String,
+    require: true
+  },
+  create_time: {
+    type: String,
+    require: true
+  },
+  update_time: {
     type: String,
     require: true
   }

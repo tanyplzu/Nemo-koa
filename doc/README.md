@@ -34,6 +34,12 @@ windows 使用 `https://github.com/MicrosoftArchive/redis/releases`
 
 启动：redis-server(windows 在gitbash中运行)
 
+### 启动程序
+
+npm run dev
+使用下面接口查看程序有没有启动：
+http://localhost:3000/users/test
+
 ### 日志管理
 
 log4js接入及使用方法

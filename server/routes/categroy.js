@@ -1,22 +1,11 @@
 import Router from 'koa-router'
-import axios from '../utils/axios'
+import { addCategroy, all } from '../controller/categroyCtrl'
 
-let router = new Router({
-  prefix: '/categroy'
+let router = new Router()
+router.post('/addCategroy', async (ctx) => {
+  ctx.body = await addCategroy(ctx);
 })
-const sign = "a3c9fe0782107295ee9f1709edd15218";
-router.get('/crumbs', async(ctx) => {
-  let {status,data:{areas, types}} = await axios.get('http://cp-tools.cn/categroy/crumbs',{
-    params: {
-      city: ctx.query.city.replace('市','') || "北京",
-      sign
-    }
-})
-if(status === 200) {
-    ctx.body = {
-      areas,
-      types
-    }
-}
+router.get('/all', async (ctx) => {
+  ctx.body = await all(ctx);
 })
 export default router
