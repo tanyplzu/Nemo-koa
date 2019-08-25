@@ -1,13 +1,12 @@
-export default {
-  // 数据库配置
-  dbs: 'mongodb://127.0.0.1:27017/student',
-  // redis配置
-  redis: {
-    get host() {
-      return '127.0.0.1'
-    },
-    get port() {
-      return 6379
-    }
+module.exports = {
+  database: {
+    dbName: 'test',
+    host: '127.0.0.1',
+    port: 3306,
+    dialect: 'mysql',
+    user: 'root',
+    password: 'root1234',
+    logging: false,
   },
-}
+  secret: ''
+};

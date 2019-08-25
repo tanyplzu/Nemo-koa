@@ -7,9 +7,7 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const cors = require('koa2-cors')
 
-import mongoose from 'mongoose'
-
-import dbConfig from './config/dbConfig' // 导入数据库配置
+// import dbConfig from './config/dbConfig' // 导入数据库配置
 
 // interface
 import router from './server/index' // 接口
@@ -18,9 +16,9 @@ import router from './server/index' // 接口
 onerror(app)
 
 // 链接数据库
-mongoose.connect(dbConfig.dbs, {
-  useNewUrlParser: true
-})
+// mongoose.connect(dbConfig.dbs, {
+//   useNewUrlParser: true
+// })
 
 // middlewares
 // 使用ctx.body解析中间件

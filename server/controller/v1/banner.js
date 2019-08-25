@@ -1,18 +1,15 @@
-import { resdata, errdata } from '../utils/serve'
-import Banner from '../models/banner'
+import { resdata, errdata } from '../../utils/serve'
+import { Banner } from '../../models/banner'
 
 exports.addBanner = async (ctx) => {
-  const { name, description, items } = ctx.request.body
-  if (!name || !description) {
-    return errdata('参数错误！', ctx);
-  }
-  const banner = new Banner({
+  const { name, description } = ctx.request.body
+  const banner = await Banner.create({
     name: name,
     description: description,
-    items: items,
   })
+  console.log(banner);
+  
   try {
-    await banner.save();
     return resdata();
   } catch (error) {
     return errdata(error);
@@ -22,8 +19,12 @@ exports.getBanner = async (ctx) => {
   const host = ctx.request.header.host;
   try {
     const banner = await Banner.findOne({
-      _id: ctx.params.id
+      where: {
+        id: ctx.params.id,
+      }
     })
+    console.log(ctx.params.id,banner);
+
     let items = []
     if (banner) {
       items = banner.items.map(item => {
@@ -41,4 +42,9 @@ exports.getBanner = async (ctx) => {
   } catch (error) {
     return errdata(error);
   }
+}
+exports.test = async (ctx) => {
+  const banner = await Banner.findOne({
+    id: ctx.params.id,
+  })
 }

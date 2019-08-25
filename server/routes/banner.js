@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import { addBanner, getBanner } from '../controller/bannerCtrl'
+import { getBanner, addBanner } from '../controller/v1/banner'
 
 let router = new Router()
 router.post('/addBanner', async (ctx) => {

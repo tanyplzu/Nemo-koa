@@ -1,36 +1,22 @@
-import mongoose from 'mongoose'
+import sequelize from '../utils/db'
+import { Sequelize, Model } from 'sequelize';
 
-const Schema = mongoose.Schema
-const UserSchema = new Schema({
+class User extends Model {}
+User.init({
   id: {
-    type: String,
-    unique: true, // 唯一
-    require: true // 必须
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
   },
   openid: {
-    type: String,
-    require: true
+    type: Sequelize.STRING(64),
+    unique: true
   },
-  nickname: {
-    type: String,
-    require: true
-  },
-  extend: {
-    type: String,
-    require: true
-  },
-  delete_time: {
-    type: String,
-    require: true
-  },
-  create_time: {
-    type: String,
-    require: true
-  },
-  update_time: {
-    type: String,
-    require: true
-  }
+  nickname: Sequelize.STRING,
+}, {
+  sequelize,
+  tableName: 'user'
 })
-
-export default mongoose.model('User', UserSchema)
+module.exports = {
+  User
+}

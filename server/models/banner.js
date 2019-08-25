@@ -1,41 +1,42 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
-const BannerItem = new Schema({
-  _id: false,
-  key_word: {
-    type: String,
-    require: true
-  },
-  img_id: {
-    type: String,
-    require: true
-  },
-}, {
-  timestamps: {
-    createdAt: 'created_time',
-    updatedAt: 'update_time'
-  }
-})
+import { sequelize } from '../utils/db'
+import Sequelize from 'sequelize';
+import Image from './image';
 
-const Banner = new Schema({
+class Banner extends Sequelize.Model {}
+Banner.init({
   id: {
-    type: String,
-    require: true
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
   },
-  name: {
-    type: String,
-    require: true
-  },
-  description: {
-    type: String,
-    require: true
-  },
-  items: [BannerItem],
+  name: Sequelize.STRING,
+  description: Sequelize.STRING,
 }, {
-  timestamps: {
-    createdAt: 'created_time',
-    updatedAt: 'update_time',
-  }
+  sequelize,
+  modelName: 'banner'
 })
 
-export default mongoose.model('Banner', Banner)
+class BannerItem extends Sequelize.Model {}
+BannerItem.init({
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  type: Sequelize.STRING,
+  key_word: Sequelize.STRING,
+  img_id: Sequelize.INTEGER,
+  banner_id: Sequelize.INTEGER,
+}, {
+  sequelize,
+  tableName: 'banner_item'
+});
+// BannerItem.associate = function() {
+//   BannerItem.belongsTo(Banner, { as: 'items', foreignKey: 'banner_id', targetKey: 'id' });
+//   BannerItem.hasOne(Image, { as: 'items', foreignKey: 'img_id' });
+// }
+
+module.exports = {
+  Banner,
+  BannerItem
+}

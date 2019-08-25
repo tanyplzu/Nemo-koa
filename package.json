@@ -27,12 +27,15 @@
     "koa-views": "^5.2.1",
     "koa2-cors": "^2.0.6",
     "log4js": "^4.1.0",
-    "mongoose": "^5.5.2",
+    "module-alias": "^2.2.1",
+    "mysql2": "^1.6.5",
     "nodemailer": "^6.1.0",
     "passport-local": "^1.0.0",
     "pm2": "^3.5.0",
     "pug": "^2.0.0-rc.1",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "sequelize": "^5.6.1",
+    "validator": "^11.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
