@@ -10,6 +10,7 @@ const sequelize = new Sequelize(dbName, user, password, {
   logging,
   timezone: '+08:00',
   define: {
+    freezeTableName: false,
     timestamps: true, // 三个时间
     createdAt: 'create_time',
     updatedAt: 'update_time',

@@ -3,13 +3,11 @@ import { Banner } from '../../models/banner'
 
 exports.addBanner = async (ctx) => {
   const { name, description } = ctx.request.body
-  const banner = await Banner.create({
-    name: name,
-    description: description,
-  })
-  console.log(banner);
-  
   try {
+    const banner = await Banner.create({
+      name: name,
+      description: description,
+    })
     return resdata();
   } catch (error) {
     return errdata(error);
@@ -23,22 +21,7 @@ exports.getBanner = async (ctx) => {
         id: ctx.params.id,
       }
     })
-    console.log(ctx.params.id,banner);
-
-    let items = []
-    if (banner) {
-      items = banner.items.map(item => {
-        return {
-          key_word: item.key_word,
-          img: {
-            url: 'http://' + host + '/images/' + item.img_id
-          }
-        }
-      });
-    }
-    let banner1 = JSON.parse(JSON.stringify(banner));
-    banner1.items = items
-    return banner1;
+    return resdata(banner);
   } catch (error) {
     return errdata(error);
   }

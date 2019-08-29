@@ -27,7 +27,6 @@
     "koa-views": "^5.2.1",
     "koa2-cors": "^2.0.6",
     "log4js": "^4.1.0",
-    "module-alias": "^2.2.1",
     "mysql2": "^1.6.5",
     "nodemailer": "^6.1.0",
     "passport-local": "^1.0.0",
