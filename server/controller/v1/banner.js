@@ -1,5 +1,6 @@
 import { resdata, errdata } from '../../utils/serve'
-import { Banner } from '../../models/banner'
+import { Banner, BannerItem } from '../../models/banner'
+
 
 exports.addBanner = async (ctx) => {
   const { name, description } = ctx.request.body
@@ -13,13 +14,17 @@ exports.addBanner = async (ctx) => {
     return errdata(error);
   }
 }
+
 exports.getBanner = async (ctx) => {
   const host = ctx.request.header.host;
   try {
     const banner = await Banner.findOne({
       where: {
         id: ctx.params.id,
-      }
+      },
+      include: [{
+        model: BannerItem
+      }]
     })
     return resdata(banner);
   } catch (error) {

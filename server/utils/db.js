@@ -1,6 +1,7 @@
 // import Sequelize from 'sequelize';
 const Sequelize = require('sequelize')
 import { database } from '../../config/dbConfig'
+import { flush } from 'pm2';
 const { dbName, user, password, host, port, dialect, logging } = database
 
 const sequelize = new Sequelize(dbName, user, password, {
@@ -10,7 +11,7 @@ const sequelize = new Sequelize(dbName, user, password, {
   logging,
   timezone: '+08:00',
   define: {
-    freezeTableName: false,
+    freezeTableName: true,
     timestamps: true, // 三个时间
     createdAt: 'create_time',
     updatedAt: 'update_time',
@@ -19,7 +20,7 @@ const sequelize = new Sequelize(dbName, user, password, {
     underscored: true
   }
 });
-sequelize.sync({force: true})
+sequelize.sync({force: false})
 
 sequelize
   .authenticate()
